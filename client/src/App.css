@@ -10,6 +10,8 @@
 
 .location .combobox-input {
   width: 100%;
+  opacity: 0.8;
+  border-radius: 7px;
 }
 
 .map-container {
@@ -30,29 +32,31 @@ height:400px;
 .row-equal-height {
 display: flex;
 }
-/* where the about page cards start */
-.about-card.card {
-  transition: all 0.2s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.1); /* Set opacity to 0.1 */
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
+
+.about-card {
+  opacity: 0;
+  animation: fade-in 1.5s ease-in-out forwards;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
   padding: 20px;
-  margin-bottom: 30px;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.about-card.card:hover {
-  transform: translateY(-5px);
-  backdrop-filter: blur(10px); /* Increase the blur effect on hover */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.about-card-text-more {
-  display: none;
-}
-
-.about-card-text.show-more .about-card-text-more {
-  display: block;
-}
 
 
 .dash-heading{
@@ -95,8 +99,10 @@ display: flex;
 
 .background-container {
   background-image: url("../src/assets/img/VendyBG.png");
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -123,15 +129,73 @@ display: flex;
   text-align: center;
   align-items: center;
 }
-/* aboutpage background css */
-.about-background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../src/assets/img/VendyBG.png");
-  background-size: cover;
-  z-index: -1;
+
+
+.home-business-background {
+  background-image: url("../src/assets/img/LABG.jpg");
+  height: 500px;
+  width: 500px;
+  border: 3px solid #000000;
 }
+
+.home-cover {
+  background-image: linear-gradient(rgb(151, 94, 115), rgb(202, 72, 72), rgb(255, 167, 90), rgb(221, 221, 122));
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.navbar-custom {
+  display: flex;
+  align-items: center;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 4px rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+
+.edit-btn{
+  box-shadow: inset 0 0 0 0 #e17c94;
+  -webkit-transition: ease-out 1s;
+  -moz-transition: ease-out 1s;
+  transition: ease-out 1s;
+  border: 1px solid black !important;
+}
+
+.edit-btn:hover {
+  /* box-shadow: inset 400px 0 0 0 rgb(236,132,124); */
+  box-shadow: inset 0 100px 0 0 #df5535;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.form-control{
+  opacity: 0.8;
+}
+
+.form-control:hover, .combobox-input:hover{
+  border: 1px solid black !important;
+  opacity: 1;
+  box-shadow:
+      0 0 0px #df5535,
+      0 0 1px #df5535,
+      0 0 2px #df5535,
+      0 0 3px #df5535,
+      0 0 4px #fff,
+      0 0 5px #fff,
+      0 0 6px #fff,
+      0 0 7px #fff;
+}
+
+
+.edit-headings{
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  letter-spacing: 3px;
+}
+
+
 

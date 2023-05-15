@@ -31,7 +31,10 @@ const Home = () => {
 
     return (
         <>
+        <div className="home-cover">
             <TopNav />
+
+            
 
             <div className="container rounded p-2 main-content align-top mb-3" id="main-content">
                 
@@ -50,12 +53,13 @@ const Home = () => {
                         className=" col-12 col-lg-7 col-md-7 col-sm-12 mt-2 mb-3"
                         id="map-container"
                     >
-                        <Map locationCenter={locationCenter} businessList={businessList} setSelectedBusiness={setSelectedBusiness} />
+                        <Map locationCenter={locationCenter} businessList={businessList} setSelectedBusiness={setSelectedBusiness} onBusinessSelect={setSelectedBusiness} />
 
                     </div>
                 </div>
                 <DisplaySearchResults businessList={businessList} onBusinessSelect={setSelectedBusiness} />
 
+            </div>
             </div>
         </>
     );
